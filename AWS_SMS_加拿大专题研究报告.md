@@ -410,8 +410,8 @@ CWTA（Canadian Wireless Telecommunications Association）是加拿大无线行�
 | e grave (`e`) | **是** | 可保留 |
 | e acute (`e`) | **是** | 可保留 |
 | u grave (`u`) | **是** | 可保留 |
-| a grave (`a`) | **否** | 去掉重音写 `a` |
-| c cedilla (`c`) | **否** | 去掉写 `c` |
+| a grave (`a`) | **是** | 可保留（GSM-7 位置 0x7F） |
+| c cedilla (`c`) | **是** | 可保留（GSM-7 位置 0x09） |
 | i circumflex (`i`) | **否** | 去掉重音写 `i` |
 | o circumflex (`o`) | **否** | 去掉重音写 `o` |
 
