@@ -10,7 +10,6 @@
 
 1. [需注册国家的表单填写指南](#一需注册国家的表单填写指南)
    - [美国 10DLC](#1-美国-us--10dlc-注册)
-   - [中国 模板注册](#2-中国-cn--消息模板注册)
    - [新加坡 SSIR](#3-新加坡-sg--ssir-sender-id-注册)
    - [英国 MEF](#4-英国-gb--mef-sender-id-注册)
    - [爱尔兰 ComReg](#5-爱尔兰-ie--comreg-sender-id-注册)
@@ -131,57 +130,7 @@ Track your package at https://acmetech.com/track/A12345. Reply STOP to opt out.
 
 ---
 
-### 2. 中国 (CN) — 消息模板注册
-
-中国通过 **AWS Support Case** 提交模板注册，非控制台表单。
-
-#### 2.1 Support Case 填写
-
-| 字段 | 填写值 |
-|------|-------|
-| Limit type | `AWS End User Messaging SMS (Pinpoint)` |
-| Message type | `One Time Password` / `Promotional` / `Transactional` |
-| AWS Region | `ap-northeast-1` |
-| Target countries | `China` |
-| Resource Type | `Template Registration` |
-| Quota | `One Time Passwords/2FA` 或 `Transactional` |
-| New quota value | `1` |
-
-#### 2.2 Case Description 范例
-
-```
-Company: Acme Technology (Shanghai) Co., Ltd.
-Address: Building A, 1234 Zhangjiang Road, Pudong New District, Shanghai 201203
-Phone: +86-21-5555-0100
-Website: https://www.acmetech.cn
-
-We request template registration for sending OTP verification codes to
-users in China.
-
-Monthly volume: Approximately 50,000 messages per month.
-
-Opt-in workflow: Users register an account on our website
-(https://www.acmetech.cn/register) and provide their mobile phone number.
-During registration, they explicitly agree to receive SMS verification
-codes by checking "I agree to receive SMS verification messages."
-
-SMS Templates:
-
-Template 1 (OTP):
-【AcmeTech】您的验证码为{code}，有效期{minutes}分钟。如非本人操作，请忽略此消息。
-
-Template 2 (Order notification):
-【AcmeTech】您的订单{order_id}已发货，预计{date}送达。查看物流：{url}
-
-Template 3 (Account alert):
-【AcmeTech】您的账户于{time}在{location}登录，如非本人操作，请立即修改密码。
-```
-
-> **重要：** 中国短信必须以【签名】开头，签名须与注册公司名相关。AWS 初始回复后会提供国家专属注册表单。
-
----
-
-### 3. 新加坡 (SG) — SSIR Sender ID 注册
+### 2. 新加坡 (SG) — SSIR Sender ID 注册
 
 三步流程：**获取 UEN → AWS 表单 → SGNIC 注册**
 
@@ -821,7 +770,6 @@ Msg&data rates may apply. Reply STOP to cancel.
 | 国家 | 注册体系 | LOA数量 | 外部注册 | 文件复杂度 | 允许营销 |
 |------|---------|---------|---------|-----------|---------|
 | 美国 US | 10DLC Brand+Campaign | 0 | Campaign Registry | 中 | 是 |
-| 中国 CN | Support Case 模板注册 | 0 | 无 | 低 | 需审核 |
 | 新加坡 SG | SSIR + SGNIC | 0-1 | ACRA + SGNIC | 中 | 是 |
 | 英国 GB | MEF Registry | 0-1 | MEF（如适用） | 低-中 | 是 |
 | 爱尔兰 IE | ComReg | 0 | ComReg 门户 | 中 | 是 |
@@ -851,7 +799,6 @@ Msg&data rates may apply. Reply STOP to cancel.
 | 法语 | ARRET / STOP | AIDE / HELP | 法国 |
 | 德语 | STOPP / STOP | HILFE / HELP | 德国/奥地利/瑞士 |
 | 葡萄牙语 | PARAR / STOP | AJUDA / HELP | 巴西/葡萄牙 |
-| 中文 | TD（退订）/ STOP | BZ（帮助）/ HELP | 中国 |
 | 日语 | STOP / 停止 | HELP / ヘルプ | 日本 |
 | 阿拉伯语 | STOP / ايقاف | HELP / مساعدة | 沙特/阿联酋 |
 
