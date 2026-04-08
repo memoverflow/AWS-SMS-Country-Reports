@@ -23,13 +23,33 @@
 
 ---
 
-## 二、短码申请详细流程
+## 二、费用总览
 
-### 2.1 申请方式
+### 2.1 号码费用
+
+| 费用项目 | 一次性费用 | 月度费用 | 备注 |
+|---------|-----------|---------|------|
+| 短码 (Short Code) | $500 | $335 | 需通过 Support Case 确认，此为参考价格 |
+
+### 2.2 每条消息费用
+
+| 号码类型 | 基础价格/条 | 备注 |
+|---------|-----------|------|
+| 短码 | $0.09059 | 每条消息段（message segment）计费 |
+
+### 2.3 月度消费阈值
+
+新账户默认 $1.00 USD/月，需申请提高。
+
+---
+
+## 三、短码申请详细流程
+
+### 3.1 申请方式
 
 阿根廷**不在** AWS 控制台直接支持短码申请的国家列表中（控制台直接支持的仅有：智利、芬兰、德国、印度、荷兰、西班牙、英国、美国），需通过 **AWS Support Case** 手动申请。
 
-### 2.2 Support Case 填写指南
+### 3.2 Support Case 填写指南
 
 **访问地址：**
 ```
@@ -53,7 +73,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 - Transactional
 - Transactional/Notifications/OTP/2FA
 
-### 2.3 Case Description 模板
+### 3.3 Case Description 模板
 
 ```
 Subject: Request for Dedicated Short Code - Argentina (AR)
@@ -101,7 +121,7 @@ $[desired amount] USD.
 Please provide the registration form and estimated timeline.
 ```
 
-### 2.4 申请时间线
+### 3.4 申请时间线
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -112,7 +132,7 @@ Please provide the registration form and estimated timeline.
 | 短码配置完成 | 1-2周 |
 | **总计** | **6-15周** |
 
-### 2.5 费用说明
+### 3.5 费用说明
 
 | 费用项 | 说明 |
 |--------|------|
@@ -123,7 +143,7 @@ Please provide the registration form and estimated timeline.
 
 > **重要：** 费用从向运营商提交申请那一刻开始计费，即使短码尚未配置完成。申请被拒绝已产生的费用也不退还。
 
-### 2.6 需要准备的材料
+### 3.6 需要准备的材料
 
 1. 公司基本信息（名称、地址、联系方式、网站）
 2. 详细的使用场景描述
@@ -136,13 +156,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 三、阿根廷电信监管 (ENACOM)
+## 四、阿根廷电信监管 (ENACOM)
 
-### 3.1 监管机构
+### 4.1 监管机构
 
 **ENACOM**（Ente Nacional de Comunicaciones，国家通信管理局）是阿根廷通信监管机构，2016年成立，合并了前 AFSCA 和 AFTIC。
 
-### 3.2 A2P SMS 监管现状
+### 4.2 A2P SMS 监管现状
 
 **ENACOM 目前没有针对 A2P SMS 的专门法规。** 监管主要通过：
 - 运营商自律机制
@@ -150,7 +170,7 @@ Please provide the registration form and estimated timeline.
 - 消费者保护法
 - Registro Nacional No Llame（国家谢绝来电登记）
 
-### 3.3 禁止/限制内容
+### 4.3 禁止/限制内容
 
 | 类别 | 限制程度 |
 |------|---------|
@@ -161,7 +181,7 @@ Please provide the registration form and estimated timeline.
 | 政治宣传 | 选举期间有特殊限制 |
 | 金融诈骗/钓鱼 | 禁止 |
 
-### 3.4 发送时间建议
+### 4.4 发送时间建议
 
 虽无明确法定限制，行业最佳实践：
 - **推荐发送时段：** 08:00-21:00 ART（UTC-3）
@@ -170,13 +190,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 四、阿根廷数据保护法 (Ley 25.326)
+## 五、阿根廷数据保护法 (Ley 25.326)
 
-### 4.1 法律概述
+### 5.1 法律概述
 
 **Ley 25.326**（个人数据保护法）是阿根廷核心数据保护法律，被欧盟认定为提供"充分"数据保护水平。
 
-### 4.2 对 SMS 业务的关键要求
+### 5.2 对 SMS 业务的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -187,7 +207,7 @@ Please provide the registration form and estimated timeline.
 | **数据库注册** | 允许个人数据归档的数据库必须在国家登记处注册 |
 | **数据保留** | 不应超过必要期限 |
 
-### 4.3 违规处罚
+### 5.3 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -197,7 +217,7 @@ Please provide the registration form and estimated timeline.
 | 公职人员 | 加重处罚 |
 | 罚款缴纳期限 | 通知后10个工作日内 |
 
-### 4.4 Registro Nacional No Llame（谢绝来电登记）
+### 5.4 Registro Nacional No Llame（谢绝来电登记）
 
 - 公民可免费注册号码拒绝商业广告
 - 虽主要针对电话，但精神上延伸至 SMS
@@ -205,9 +225,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 五、运营商与号码格式
+## 六、运营商与号码格式
 
-### 5.1 三大运营商
+### 6.1 三大运营商
 
 | 运营商 | 母公司 | 备注 |
 |--------|--------|------|
@@ -215,7 +235,7 @@ Please provide the registration form and estimated timeline.
 | Movistar | Telefonica (西班牙) | 覆盖南部 |
 | Personal | Telecom Argentina | 覆盖北部 |
 
-### 5.2 号码格式（极其重要）
+### 6.2 号码格式（极其重要）
 
 **阿根廷号码格式是最容易出错的之一：**
 
@@ -250,7 +270,7 @@ Please provide the registration form and estimated timeline.
 +542966XXXXXX      ← 里奥加列戈斯
 ```
 
-### 5.3 运营商技术细节
+### 6.3 运营商技术细节
 
 - 动态 Sender ID 不被支持
 - 运营商有垃圾信息自动过滤
@@ -261,13 +281,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 六、不支持双向 SMS 的替代退出方案
+## 七、不支持双向 SMS 的替代退出方案
 
-### 6.1 问题
+### 7.1 问题
 
 AWS 上阿根廷不支持双向 SMS，用户无法回复 STOP 退订。必须提供替代 opt-out 机制。
 
-### 6.2 四种替代方案
+### 7.2 四种替代方案
 
 #### 方案一：短链接退出（推荐）
 
@@ -312,7 +332,7 @@ Cancelar SMS: llame al +54-XXX-XXX-XXXX
 
 在 App 设置中提供 SMS 偏好管理页面。
 
-### 6.3 最佳实践
+### 7.3 最佳实践
 
 1. 每条营销消息**必须**包含退出指引
 2. 使用品牌自有域名短链接（避免 bit.ly 等被运营商过滤）
@@ -323,9 +343,9 @@ Cancelar SMS: llame al +54-XXX-XXX-XXXX
 
 ---
 
-## 七、消息模板范例（西班牙语）
+## 八、消息模板范例（西班牙语）
 
-### 7.1 字符编码说明
+### 8.1 字符编码说明
 
 | 编码 | 单条上限 | 拼接每段 | 何时触发 |
 |------|---------|---------|---------|
@@ -346,7 +366,7 @@ Cancelar SMS: llame al +54-XXX-XXX-XXXX
 
 > **建议：** 阿根廷用户普遍习惯在短信中不使用重音符号。使用 GSM-7 兼容写法可将每条消息从 70 字符提升到 160 字符，显著降低成本。
 
-### 7.2 OTP 验证码模板
+### 8.2 OTP 验证码模板
 
 **GSM-7 兼容版（推荐，160字符/条）：**
 ```
@@ -362,7 +382,7 @@ No comparta este código.
 ```
 (79字符，2条消息 = 双倍费用)
 
-### 7.3 交易通知模板
+### 8.3 交易通知模板
 
 **订单确认（GSM-7）：**
 ```
@@ -406,7 +426,7 @@ Si no fue usted: https://brand.com/security
 ```
 (93字符，1条)
 
-### 7.4 营销消息模板（需 opt-in 同意）
+### 8.4 营销消息模板（需 opt-in 同意）
 
 **促销活动（GSM-7）：**
 ```
@@ -432,7 +452,7 @@ Cancelar: https://brand.com/unsub/{TOKEN}
 ```
 (120字符，1条)
 
-### 7.5 Opt-in 确认模板
+### 8.5 Opt-in 确认模板
 
 **首次订阅确认（GSM-7）：**
 ```
@@ -441,7 +461,7 @@ Frecuencia variable. Cancelar: https://brand.com/unsub/{TOKEN}
 ```
 (114字符，1条)
 
-### 7.6 注意事项汇总
+### 8.6 注意事项汇总
 
 | 要点 | 说明 |
 |------|------|
@@ -454,9 +474,9 @@ Frecuencia variable. Cancelar: https://brand.com/unsub/{TOKEN}
 
 ---
 
-## 八、定价信息
+## 九、定价信息
 
-### 8.1 AWS 定价
+### 9.1 AWS 定价
 
 AWS 未在公开文档直接列出阿根廷每条费率，需通过：
 1. 下载 AWS 定价 CSV：`aws.amazon.com/end-user-messaging/pricing/`
@@ -468,7 +488,7 @@ AWS 未在公开文档直接列出阿根廷每条费率，需通过：
 - 每条消息费：需参考 CSV
 - 默认消费阈值：$1.00 USD/月（需申请提高）
 
-### 8.2 成本优化建议
+### 9.2 成本优化建议
 
 1. **使用 GSM-7 编码** — 每条160字符 vs Unicode 的70字符，可减少约50%消息段数
 2. **精简消息内容** — 保持单条消息在160字符内避免拼接
@@ -477,7 +497,7 @@ AWS 未在公开文档直接列出阿根廷每条费率，需通过：
 
 ---
 
-## 九、合规清单
+## 十、合规清单
 
 在阿根廷发送 SMS 前，确保完成：
 
@@ -497,7 +517,7 @@ AWS 未在公开文档直接列出阿根廷每条费率，需通过：
 
 ---
 
-## 十、风险评估
+## 十一、风险评估
 
 | 风险 | 严重程度 | 缓解措施 |
 |------|---------|---------|

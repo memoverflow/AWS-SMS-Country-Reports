@@ -1,10 +1,3 @@
-# 新加坡 (SG, +65) AWS SMS 发送专题研究报告
-
-> 调研日期：2026年4月7日
-> 数据来源：AWS 官方文档、IMDA 官网、SGNIC SMS Registry、PDPA 资料
-
----
-
 ## 一、AWS 上的新加坡 SMS 能力总览
 
 | 项目 | 详情 |
@@ -23,15 +16,35 @@
 
 ---
 
-## 二、SSIR 注册详细流程
+## 二、费用总览
 
-### 2.1 SSIR 概述
+### 2.1 号码费用
+
+| 费用项目 | 一次性费用 | 月度费用 | 备注 |
+|---------|-----------|---------|------|
+| Sender ID | 免费 | 免费 | 需完成 SSIR 注册（三步流程） |
+
+> 新加坡也支持短码和长码，但费用需联系 AWS 确认。Sender ID 本身免费。
+
+### 2.2 每条消息费用
+
+| 发送方式 | 每条消息费用 | 备注 |
+|---------|------------|------|
+| 所有号码类型 | $0.03918 | — |
+
+### 2.3 月度消费阈值
+
+新账户默认 **$1.00 USD/月**，需通过 AWS Support Case 申请提高。
+
+## 三、SSIR 注册详细流程
+
+### 3.1 SSIR 概述
 
 SSIR（Singapore SMS Sender ID Registry）于2022年3月启用，由 SGNIC（Singapore Network Information Centre）管理，SGNIC 隶属于 IMDA（Info-communications Media Development Authority，资讯通信媒体发展管理局）。SSIR 旨在打击短信诈骗，保护消费者。
 
 注册分为**三步**，必须按顺序完成。
 
-### 2.2 第一步：获取 UEN（Unique Entity Number）
+### 3.2 第一步：获取 UEN（Unique Entity Number）
 
 **什么是 UEN：**
 UEN 是新加坡企业的唯一实体编号，由 ACRA（Accounting and Corporate Regulatory Authority，会计与企业监管局）颁发。
@@ -51,7 +64,7 @@ T08FC1234A      ← 外国公司分支
 
 > **注意：** UEN 是整个 SSIR 注册流程的基础，没有 UEN 无法继续后续步骤。
 
-### 2.3 第二步：在 AWS 控制台提交注册
+### 3.3 第二步：在 AWS 控制台提交注册
 
 **访问地址：** https://console.aws.amazon.com/sms-voice/
 
@@ -113,7 +126,7 @@ T08FC1234A      ← 外国公司分支
 
 > **重要：** 必须先完成第二步（AWS 控制台注册），再进行第三步（SGNIC 注册）。
 
-### 2.4 第三步：在 SGNIC 注册
+### 3.4 第三步：在 SGNIC 注册
 
 **访问地址：** https://smsregistry.sg/web/login
 
@@ -135,7 +148,7 @@ T08FC1234A      ← 外国公司分支
    - SGNIC 审核完成后，注册信号会自动发送至 AWS
    - AWS 控制台中的注册状态会更新
 
-### 2.5 不注册的后果
+### 3.5 不注册的后果
 
 | 后果 | 详情 |
 |------|------|
@@ -144,7 +157,7 @@ T08FC1234A      ← 外国公司分支
 | 品牌严重受损 | 消息显示为 "LIKELY-SCAM" 将严重损害品牌信誉和用户信任 |
 | 替代方案 | 可使用短码或长码发送（不需要 SSIR 注册），但不显示品牌名称 |
 
-### 2.6 需要准备的材料清单
+### 3.6 需要准备的材料清单
 
 1. **UEN（Unique Entity Number）** — 新加坡企业唯一编号
 2. 公司基本信息（名称、地址、网站）
@@ -156,7 +169,7 @@ T08FC1234A      ← 外国公司分支
 8. **Singpass/Corppass 账号** — 用于 SGNIC 门户登录
 9. 将 **AMCS SG Private Limited** 列为聚合商的确认
 
-### 2.7 申请时间线
+### 3.7 申请时间线
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -170,9 +183,9 @@ T08FC1234A      ← 外国公司分支
 
 ---
 
-## 三、短码与长码申请
+## 四、短码与长码申请
 
-### 3.1 短码申请
+### 4.1 短码申请
 
 新加坡短码需通过 AWS Support Case 申请。
 
@@ -200,7 +213,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 - Transactional
 - Transactional/Notifications/OTP/2FA
 
-### 3.2 Case Description 模板
+### 4.2 Case Description 模板
 
 ```
 Subject: Request for Dedicated Short Code - Singapore (SG)
@@ -253,15 +266,15 @@ $[desired amount] USD.
 Please provide the registration form and estimated timeline.
 ```
 
-### 3.3 长码
+### 4.3 长码
 
 新加坡支持长码，可通过 AWS 控制台直接购买，无需 Support Case。
 
 ---
 
-## 四、新加坡电信监管
+## 五、新加坡电信监管
 
-### 4.1 监管机构
+### 5.1 监管机构
 
 **IMDA**（Info-communications Media Development Authority，资讯通信媒体发展管理局）是新加坡的电信和媒体监管机构。
 
@@ -269,7 +282,7 @@ Please provide the registration form and estimated timeline.
 
 **SGNIC**（Singapore Network Information Centre）管理 SSIR 注册。
 
-### 4.2 A2P SMS 监管法规
+### 5.2 A2P SMS 监管法规
 
 | 法规 | 说明 |
 |------|------|
@@ -279,7 +292,7 @@ Please provide the registration form and estimated timeline.
 | Spam Control Act 2007 | 垃圾信息控制法 |
 | Do Not Call (DNC) Registry | 谢绝来电登记 |
 
-### 4.3 Spam Control Act 对 SMS 的要求
+### 5.3 Spam Control Act 对 SMS 的要求
 
 | 要求 | 详情 |
 |------|------|
@@ -288,7 +301,7 @@ Please provide the registration form and estimated timeline.
 | **退出处理** | 收到退出请求后10个工作日内执行 |
 | **营销消息限制** | 禁止向 DNC 名单中的号码发送营销消息 |
 
-### 4.4 禁止/限制内容
+### 5.4 禁止/限制内容
 
 | 类别 | 限制程度 |
 |------|---------|
@@ -299,7 +312,7 @@ Please provide the registration form and estimated timeline.
 | 烟草/酒精 | 严格限制 |
 | 成人内容 | 严格限制 |
 
-### 4.5 发送时间建议
+### 5.5 发送时间建议
 
 虽无明确法定限制，行业最佳实践：
 - **推荐发送时段：** 08:00-21:00 SGT（UTC+8）
@@ -308,13 +321,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 五、新加坡数据保护法 (PDPA)
+## 六、新加坡数据保护法 (PDPA)
 
-### 5.1 法律概述
+### 6.1 法律概述
 
 **PDPA**（Personal Data Protection Act 2012）是新加坡核心数据保护法律，自2014年7月2日全面生效。
 
-### 5.2 对 SMS 业务的关键要求
+### 6.2 对 SMS 业务的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -328,7 +341,7 @@ Please provide the registration form and estimated timeline.
 | **数据泄露通知** | 2021年2月起，须在3个日历日内向 PDPC 通报重大数据泄露 |
 | **DNC（Do Not Call）** | 发送营销 SMS 前必须检查 DNC 名单 |
 
-### 5.3 DNC Registry（谢绝来电登记）
+### 6.3 DNC Registry（谢绝来电登记）
 
 新加坡 DNC Registry 包含三个名单：
 - **No Voice Call** — 拒绝语音营销电话
@@ -340,7 +353,7 @@ Please provide the registration form and estimated timeline.
 - 可通过 DNC API 批量查询
 - 违规将面临罚款
 
-### 5.4 违规处罚
+### 6.4 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -351,9 +364,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 六、运营商与号码格式
+## 七、运营商与号码格式
 
-### 6.1 三大运营商
+### 7.1 三大运营商
 
 | 运营商 | 备注 |
 |--------|------|
@@ -362,7 +375,7 @@ Please provide the registration form and estimated timeline.
 | M1 | 第三大运营商（Keppel & SPH 旗下） |
 | TPG Telecom | 较新进入市场的第四运营商 |
 
-### 6.2 号码格式
+### 7.2 号码格式
 
 #### 基本结构
 - 国家代码：+65
@@ -392,7 +405,7 @@ Please provide the registration form and estimated timeline.
 
 > **新加坡号码无前导0，直接 +65 加8位数字即可。**
 
-### 6.3 运营商技术细节
+### 7.3 运营商技术细节
 
 - Sender ID 通过 SSIR 管理
 - 未注册 Sender ID 显示为 "LIKELY-SCAM"
@@ -402,9 +415,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 七、消息模板范例（英语/中文）
+## 八、消息模板范例（英语/中文）
 
-### 7.1 字符编码说明
+### 8.1 字符编码说明
 
 | 编码 | 单条上限 | 拼接每段 | 何时触发 |
 |------|---------|---------|---------|
@@ -423,7 +436,7 @@ Please provide the registration form and estimated timeline.
 
 > **重要：** 如果消息中包含**任何**中文字符，整条消息都将使用 UCS-2 编码（70字符/条）。建议英语和中文消息分别发送，避免混合导致不必要的成本增加。
 
-### 7.2 OTP 验证码模板
+### 8.2 OTP 验证码模板
 
 **英语版（GSM-7，160字符/条）：**
 ```
@@ -438,7 +451,7 @@ Do not share this code with anyone.
 ```
 (40字符，1条消息)
 
-### 7.3 交易通知模板
+### 8.3 交易通知模板
 
 **订单确认 — 英语版（GSM-7）：**
 ```
@@ -493,7 +506,7 @@ If this wasn't you: https://brand.com/security
 ```
 (46字符，1条)
 
-### 7.4 营销消息模板（需 opt-in 同意 + DNC 检查）
+### 8.4 营销消息模板（需 opt-in 同意 + DNC 检查）
 
 **促销活动 — 英语版（GSM-7）：**
 ```
@@ -517,7 +530,7 @@ Reply STOP to opt out.
 ```
 (113字符，1条)
 
-### 7.5 Opt-in 确认模板
+### 8.5 Opt-in 确认模板
 
 **英语版（GSM-7）：**
 ```
@@ -532,7 +545,7 @@ Msg frequency varies. Reply STOP to cancel.
 ```
 (42字符，1条)
 
-### 7.6 注意事项汇总
+### 8.6 注意事项汇总
 
 | 要点 | 说明 |
 |------|------|
@@ -547,9 +560,9 @@ Msg frequency varies. Reply STOP to cancel.
 
 ---
 
-## 八、定价信息
+## 九、定价信息
 
-### 8.1 AWS 定价
+### 9.1 AWS 定价
 
 AWS 未在公开文档直接列出新加坡每条费率，需通过：
 1. 下载 AWS 定价 CSV：`aws.amazon.com/end-user-messaging/pricing/`
@@ -566,7 +579,7 @@ AWS 未在公开文档直接列出新加坡每条费率，需通过：
 | 每条消息费 | 需参考 CSV |
 | 默认消费阈值 | $1.00 USD/月（需申请提高） |
 
-### 8.2 成本优化建议
+### 9.2 成本优化建议
 
 1. **使用 Sender ID（免费）** — 完成 SSIR 注册后，Sender ID 本身无月租费用
 2. **优先使用英语 GSM-7** — 每条160字符，成本最低
@@ -577,7 +590,7 @@ AWS 未在公开文档直接列出新加坡每条费率，需通过：
 
 ---
 
-## 九、合规清单
+## 十、合规清单
 
 在新加坡发送 SMS 前，确保完成：
 
@@ -602,7 +615,7 @@ AWS 未在公开文档直接列出新加坡每条费率，需通过：
 
 ---
 
-## 十、风险评估
+## 十一、风险评估
 
 | 风险 | 严重程度 | 缓解措施 |
 |------|---------|---------|

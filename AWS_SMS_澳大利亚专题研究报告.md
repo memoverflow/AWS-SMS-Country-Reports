@@ -23,13 +23,34 @@
 
 ---
 
-## 二、Sender ID 注册详细流程
+## 二、费用总览
 
-### 2.1 注册方式
+### 2.1 号码费用
+
+| 费用项目 | 一次性费用 | 月度费用 | 备注 |
+|---------|-----------|---------|------|
+| 长码 (Long Code) | $0 | $22 | 预置约 3 周 |
+| Sender ID | $0 | $0 | 需 LOA 注册 |
+
+### 2.2 每条消息费用
+
+| 号码类型 | 基础价格/条 | 备注 |
+|---------|-----------|------|
+| 长码 / Sender ID | $0.04 | 每条消息段（message segment）计费 |
+
+### 2.3 月度消费阈值
+
+新账户默认 $1.00 USD/月，需申请提高。
+
+---
+
+## 三、Sender ID 注册详细流程
+
+### 3.1 注册方式
 
 澳大利亚 Sender ID 需通过 AWS 控制台提交注册，并提供签署的 LOA（授权书）。
 
-### 2.2 LOA 模板
+### 3.2 LOA 模板
 
 **下载地址（AWS 提供）：**
 ```
@@ -38,7 +59,7 @@ Australia_SenderId_LetterOfAuthorization.zip
 
 从 AWS End User Messaging SMS 控制台的 Sender ID 注册页面下载此模板。
 
-### 2.3 注册所需材料
+### 3.3 注册所需材料
 
 | 材料 | 说明 |
 |------|------|
@@ -64,7 +85,7 @@ Australia_SenderId_LetterOfAuthorization.zip
 | **EIN** (Employer Identification Number) | 美国公司 | 用于国际公司在澳注册 |
 | **VAT** (Value Added Tax Number) | 其他国际公司 | 增值税登记号 |
 
-### 2.4 控制台注册步骤
+### 3.4 控制台注册步骤
 
 1. 登录 AWS End User Messaging SMS 控制台
 2. 导航至 **Registrations** → **Create registration**
@@ -74,7 +95,7 @@ Australia_SenderId_LetterOfAuthorization.zip
 6. 填写消息样本和使用场景
 7. 提交注册，等待审核
 
-### 2.5 注册时间线
+### 3.5 注册时间线
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -86,13 +107,13 @@ Australia_SenderId_LetterOfAuthorization.zip
 
 ---
 
-## 三、长码申请流程
+## 四、长码申请流程
 
-### 3.1 申请方式
+### 4.1 申请方式
 
 澳大利亚长码可通过 AWS 控制台直接购买，也可通过 Support Case 申请。
 
-### 3.2 控制台购买步骤
+### 4.2 控制台购买步骤
 
 1. 登录 AWS End User Messaging SMS 控制台
 2. 导航至 **Phone numbers** → **Request phone number**
@@ -101,7 +122,7 @@ Australia_SenderId_LetterOfAuthorization.zip
 5. 选择消息类型（Transactional / Promotional）
 6. 确认购买
 
-### 3.3 Support Case 填写指南（如需额外配置）
+### 4.3 Support Case 填写指南（如需额外配置）
 
 **访问地址：**
 ```
@@ -125,7 +146,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 - Transactional
 - Transactional/Notifications/OTP/2FA
 
-### 3.4 Case Description 模板
+### 4.4 Case Description 模板
 
 ```
 Subject: Request for Dedicated Long Code - Australia (AU)
@@ -171,7 +192,7 @@ We also request an increase to our monthly SMS spend limit from $1.00 to
 $[desired amount] USD.
 ```
 
-### 3.5 费用说明
+### 4.5 费用说明
 
 | 费用项 | 说明 |
 |--------|------|
@@ -181,13 +202,13 @@ $[desired amount] USD.
 
 ---
 
-## 四、澳大利亚电信监管 (ACMA)
+## 五、澳大利亚电信监管 (ACMA)
 
-### 4.1 监管机构
+### 5.1 监管机构
 
 **ACMA**（Australian Communications and Media Authority，澳大利亚通信和媒体管理局）是澳大利亚通信和媒体监管机构，负责监管电信服务、广播和互联网内容。
 
-### 4.2 核心法规：Spam Act 2003
+### 5.2 核心法规：Spam Act 2003
 
 **Spam Act 2003** 是澳大利亚规范商业电子消息（包括 SMS）的核心法律。
 
@@ -212,7 +233,7 @@ $[desired amount] USD.
 - 业务关系：购买后合理时间内（通常2年）
 - 推定同意不适用于非直接相关的营销
 
-### 4.3 禁止/限制内容
+### 5.3 禁止/限制内容
 
 | 类别 | 限制程度 |
 |------|---------|
@@ -224,7 +245,7 @@ $[desired amount] USD.
 | 金融诈骗/钓鱼 | 禁止 |
 | 隐藏发送者身份 | 禁止 |
 
-### 4.4 发送时间建议
+### 5.4 发送时间建议
 
 虽无明确法定限制，行业最佳实践：
 - **推荐发送时段：** 09:00-20:00 AEST/AEDT
@@ -232,7 +253,7 @@ $[desired amount] USD.
 - 紧急/交易类消息除外
 - 避免周日和国定假日发送营销消息
 
-### 4.5 违规处罚
+### 5.5 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -246,13 +267,13 @@ $[desired amount] USD.
 
 ---
 
-## 五、澳大利亚数据保护法 (Privacy Act 1988)
+## 六、澳大利亚数据保护法 (Privacy Act 1988)
 
-### 5.1 法律概述
+### 6.1 法律概述
 
 **Privacy Act 1988** 是澳大利亚核心数据保护法律，包含 **13 项澳大利亚隐私原则（APPs）**，规范年营业额超过 300 万澳元的组织对个人信息的处理。
 
-### 5.2 对 SMS 业务的关键要求
+### 6.2 对 SMS 业务的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -266,7 +287,7 @@ $[desired amount] USD.
 | **访问权 (APP 12)** | 个人有权访问其个人信息 |
 | **更正权 (APP 13)** | 个人有权要求更正不准确的信息 |
 
-### 5.3 违规处罚
+### 6.3 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -274,7 +295,7 @@ $[desired amount] USD.
 | 严重或反复违规（企业） | 最高 **$50,000,000 AUD**、违规相关收益的3倍、或调整后年营业额的30%（取最高值） |
 | 民事处罚 | 每次违规最高 $2,500,000 AUD |
 
-### 5.4 Do Not Call Register（谢绝来电登记）
+### 6.4 Do Not Call Register（谢绝来电登记）
 
 - 澳大利亚运营 **Do Not Call Register**（DNCR）
 - 公民可免费注册号码拒绝商业营销电话和短信
@@ -283,9 +304,9 @@ $[desired amount] USD.
 
 ---
 
-## 六、运营商与号码格式
+## 七、运营商与号码格式
 
-### 6.1 主要运营商
+### 7.1 主要运营商
 
 | 运营商 | 母公司 | 市场份额（约） | 备注 |
 |--------|--------|-------------|------|
@@ -294,7 +315,7 @@ $[desired amount] USD.
 | **TPG Telecom** (Vodafone AU) | TPG Telecom | ~20% | 2020年 Vodafone AU 与 TPG 合并 |
 | 其他 MVNO | 各异 | ~15% | Boost、Amaysim、Woolworths 等 |
 
-### 6.2 号码格式
+### 7.2 号码格式
 
 #### 基本结构
 - 国家代码：+61
@@ -316,7 +337,7 @@ $[desired amount] USD.
 
 > **SMS 号码必须去掉前导 0！** `+610412345678` 是错误格式，正确格式是 `+61412345678`。
 
-### 6.3 运营商技术细节
+### 7.3 运营商技术细节
 
 - Sender ID 需注册后才能使用
 - 运营商有垃圾信息自动过滤
@@ -327,9 +348,9 @@ $[desired amount] USD.
 
 ---
 
-## 七、消息模板范例（英语）
+## 八、消息模板范例（英语）
 
-### 7.1 字符编码说明
+### 8.1 字符编码说明
 
 | 编码 | 单条上限 | 拼接每段 | 何时触发 |
 |------|---------|---------|---------|
@@ -345,7 +366,7 @@ $[desired amount] USD.
 
 > **建议：** 英语消息天然适合 GSM-7 编码。避免使用商标符号和 emoji，可将每条消息从70字符提升到160字符，显著降低成本。
 
-### 7.2 OTP 验证码模板
+### 8.2 OTP 验证码模板
 
 **GSM-7 兼容版（推荐，160字符/条）：**
 ```
@@ -354,7 +375,7 @@ Do not share this code with anyone.
 ```
 (84字符，1条消息)
 
-### 7.3 交易通知模板
+### 8.3 交易通知模板
 
 **订单确认：**
 ```
@@ -398,7 +419,7 @@ If this wasn't you: https://brand.com/security
 ```
 (93字符，1条)
 
-### 7.4 营销消息模板（需 opt-in 同意）
+### 8.4 营销消息模板（需 opt-in 同意）
 
 **促销活动：**
 ```
@@ -421,7 +442,7 @@ Redeem now: https://brand.com/rewards Reply STOP to opt out.
 ```
 (106字符，1条)
 
-### 7.5 Opt-in 确认模板
+### 8.5 Opt-in 确认模板
 
 **首次订阅确认：**
 ```
@@ -430,7 +451,7 @@ Frequency varies. Reply STOP to unsubscribe. HELP for help.
 ```
 (117字符，1条)
 
-### 7.6 注意事项汇总
+### 8.6 注意事项汇总
 
 | 要点 | 说明 |
 |------|------|
@@ -444,9 +465,9 @@ Frequency varies. Reply STOP to unsubscribe. HELP for help.
 
 ---
 
-## 八、定价信息
+## 九、定价信息
 
-### 8.1 AWS 定价
+### 9.1 AWS 定价
 
 | 费用项 | 金额 |
 |--------|------|
@@ -460,7 +481,7 @@ Frequency varies. Reply STOP to unsubscribe. HELP for help.
 2. 联系 AWS 销售获取报价
 3. 登录 AWS 控制台查看
 
-### 8.2 成本优化建议
+### 9.2 成本优化建议
 
 1. **使用 GSM-7 编码** — 英语消息通常天然兼容，每条160字符
 2. **避免商标符号和 emoji** — 防止触发 UCS-2 导致每条仅70字符
@@ -471,7 +492,7 @@ Frequency varies. Reply STOP to unsubscribe. HELP for help.
 
 ---
 
-## 九、合规清单
+## 十、合规清单
 
 在澳大利亚发送 SMS 前，确保完成：
 
@@ -494,7 +515,7 @@ Frequency varies. Reply STOP to unsubscribe. HELP for help.
 
 ---
 
-## 十、风险评估
+## 十一、风险评估
 
 | 风险 | 严重程度 | 缓解措施 |
 |------|---------|---------|

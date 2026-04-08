@@ -1,10 +1,3 @@
-# 英国 (GB, +44) AWS SMS 发送专题研究报告
-
-> 调研日期：2026年4月7日
-> 数据来源：AWS 官方文档、Ofcom 官网、UK MEF Registry、UK GDPR/DPA 2018 资料
-
----
-
 ## 一、AWS 上的英国 SMS 能力总览
 
 | 项目 | 详情 |
@@ -23,15 +16,39 @@
 
 ---
 
-## 二、Sender ID 注册详细流程
+## 二、费用总览
 
-### 2.1 MEF SMS Sender ID Protection Registry 概述
+### 2.1 号码费用
+
+| 费用项目 | 一次性费用 | 月度费用 | 备注 |
+|---------|-----------|---------|------|
+| 专用短码（Short Code） | $0 | $1,500 | 预置约 16 周 |
+| 长码（Long Code） | $0 | $2 | 预置约 1 周 |
+| Sender ID | 免费 | 免费 | 需完成 MEF Registry 注册 |
+
+### 2.2 每条消息费用
+
+| 号码类型 | 每条消息费用 | 备注 |
+|---------|------------|------|
+| 短码 | $0.05 | — |
+| 长码 | $0.05 | — |
+| Sender ID | $0.05 | — |
+
+> 所有号码类型的每条消息费用相同。
+
+### 2.3 月度消费阈值
+
+新账户默认 **$1.00 USD/月**，需通过 AWS Support Case 申请提高。
+
+## 三、Sender ID 注册详细流程
+
+### 3.1 MEF SMS Sender ID Protection Registry 概述
 
 MEF（Mobile Ecosystem Forum）SMS Sender ID Protection Registry 是英国用于保护消费者免受欺诈短信侵害的行业注册机制。所有通过 AWS 向英国发送 SMS 的企业必须注册 Sender ID。
 
 注册分为两种情况：
 
-### 2.2 情况A：MEF 受保护的 Sender ID（Protected Sender ID）
+### 3.2 情况A：MEF 受保护的 Sender ID（Protected Sender ID）
 
 当你的 Sender ID 已在 MEF Registry 中被某个组织注册保护时，你需要提供授权书（LOA）来证明你有权使用该 Sender ID。
 
@@ -59,7 +76,7 @@ MEF（Mobile Ecosystem Forum）SMS Sender ID Protection Registry 是英国用于
 5. 填写所有必填字段（见 2.4 节）
 6. 提交注册
 
-### 2.3 情况B：非 MEF 受保护的 Sender ID（Non-Protected Sender ID）
+### 3.3 情况B：非 MEF 受保护的 Sender ID（Non-Protected Sender ID）
 
 当你的 Sender ID 未在 MEF Registry 中被保护时，流程更简单：
 
@@ -70,7 +87,7 @@ MEF（Mobile Ecosystem Forum）SMS Sender ID Protection Registry 是英国用于
 5. 填写所有其他必填字段
 6. 提交注册
 
-### 2.4 注册表单字段详情
+### 3.4 注册表单字段详情
 
 #### Sender ID Info
 
@@ -119,7 +136,7 @@ MEF（Mobile Ecosystem Forum）SMS Sender ID Protection Registry 是英国用于
 | Message Sample 2 | 否 | 额外样本 |
 | Message Sample 3 | 否 | 额外样本 |
 
-### 2.5 不注册的后果
+### 3.5 不注册的后果
 
 | 后果 | 详情 |
 |------|------|
@@ -129,13 +146,13 @@ MEF（Mobile Ecosystem Forum）SMS Sender ID Protection Registry 是英国用于
 
 ---
 
-## 三、短码申请流程
+## 四、短码申请流程
 
-### 3.1 申请方式
+### 4.1 申请方式
 
 英国**在** AWS 控制台直接支持短码申请的国家列表中，可通过控制台或 Support Case 申请。
 
-### 3.2 Support Case 填写指南（适用于需手动申请的情况）
+### 4.2 Support Case 填写指南（适用于需手动申请的情况）
 
 **访问地址：**
 ```
@@ -159,7 +176,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 - Transactional
 - Transactional/Notifications/OTP/2FA
 
-### 3.3 Case Description 模板
+### 4.3 Case Description 模板
 
 ```
 Subject: Request for Dedicated Short Code - United Kingdom (GB)
@@ -209,7 +226,7 @@ $[desired amount] USD.
 Please provide the registration form and estimated timeline.
 ```
 
-### 3.4 申请时间线
+### 4.4 申请时间线
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -220,7 +237,7 @@ Please provide the registration form and estimated timeline.
 | 短码配置完成 | 1-2周 |
 | **总计** | **10-15周** |
 
-### 3.5 费用说明
+### 4.5 费用说明
 
 | 费用项 | 说明 |
 |--------|------|
@@ -233,15 +250,15 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 四、英国电信监管
+## 五、英国电信监管
 
-### 4.1 监管机构
+### 5.1 监管机构
 
 **Ofcom**（Office of Communications，通信管理局）是英国通信行业的独立监管机构，监管范围包括电信、广播和邮政服务。
 
 **ICO**（Information Commissioner's Office，信息专员办公室）负责数据保护和隐私监管。
 
-### 4.2 A2P SMS 监管法规
+### 5.2 A2P SMS 监管法规
 
 | 法规 | 说明 |
 |------|------|
@@ -251,7 +268,7 @@ Please provide the registration form and estimated timeline.
 | Communications Act 2003 | 通信法 |
 | Ofcom General Conditions | Ofcom 通用条件 |
 
-### 4.3 PECR 对 SMS 的关键要求
+### 5.3 PECR 对 SMS 的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -261,7 +278,7 @@ Please provide the registration form and estimated timeline.
 | **软性退出例外** | 如果号码来自既有客户关系，且消息与类似产品/服务相关，可使用"软性 opt-in" |
 | **不适用于服务消息** | 纯事务性消息（如 OTP）不受营销同意要求约束 |
 
-### 4.4 禁止/限制内容
+### 5.4 禁止/限制内容
 
 | 类别 | 限制程度 |
 |------|---------|
@@ -272,7 +289,7 @@ Please provide the registration form and estimated timeline.
 | 金融推广 | 需获得 FCA 授权或批准 |
 | 烟草/电子烟 | 禁止广告 |
 
-### 4.5 发送时间建议
+### 5.5 发送时间建议
 
 虽无明确法定限制，行业最佳实践：
 - **推荐发送时段：** 08:00-20:00 GMT/BST
@@ -281,16 +298,16 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 五、英国数据保护法
+## 六、英国数据保护法
 
-### 5.1 法律框架
+### 6.1 法律框架
 
 英国数据保护由以下法律共同构成：
 - **UK GDPR**（脱欧后保留的 GDPR 版本）
 - **Data Protection Act 2018 (DPA 2018)**
 - **PECR 2003**
 
-### 5.2 对 SMS 业务的关键要求
+### 6.2 对 SMS 业务的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -302,7 +319,7 @@ Please provide the registration form and estimated timeline.
 | **数据泄露通知** | 72小时内向 ICO 通报个人数据泄露事件 |
 | **国际数据传输** | 向英国境外传输数据需有适当保障措施 |
 
-### 5.3 违规处罚
+### 6.3 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -311,7 +328,7 @@ Please provide the registration form and estimated timeline.
 | PECR 违规 | ICO 可发出最高 **50万英镑** 的罚款通知 |
 | 执法行动 | ICO 可发出执行通知、信息通知、评估通知 |
 
-### 5.4 Telephone Preference Service (TPS)
+### 6.4 Telephone Preference Service (TPS)
 
 - 英国的全国性电话营销退出名册
 - 虽主要针对语音电话，但 SMS 营销也应参考
@@ -320,9 +337,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 六、运营商与号码格式
+## 七、运营商与号码格式
 
-### 6.1 四大运营商
+### 7.1 四大运营商
 
 | 运营商 | 母公司/备注 |
 |--------|------------|
@@ -333,7 +350,7 @@ Please provide the registration form and estimated timeline.
 
 **MVNO（虚拟运营商）：** 此外有大量 MVNO 运营商，如 giffgaff、Tesco Mobile、Sky Mobile、ASDA Mobile 等，均基于四大网络。
 
-### 6.2 号码格式
+### 7.2 号码格式
 
 #### 基本结构
 - 国家代码：+44
@@ -364,7 +381,7 @@ Please provide the registration form and estimated timeline.
 
 > **SMS 发送时去掉国内拨号前导 `0`！** 例如国内号码 07911 123456 应格式化为 +447911123456。
 
-### 6.3 运营商技术细节
+### 7.3 运营商技术细节
 
 - Sender ID 通过 MEF Registry 保护
 - 运营商有垃圾信息自动过滤和欺诈检测
@@ -375,13 +392,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 七、不支持双向 SMS 的替代退出方案
+## 八、不支持双向 SMS 的替代退出方案
 
-### 7.1 问题
+### 8.1 问题
 
 AWS 上英国不支持双向 SMS，用户无法回复 STOP 退订。必须提供替代 opt-out 机制。
 
-### 7.2 四种替代方案
+### 8.2 四种替代方案
 
 #### 方案一：短链接退出（推荐）
 
@@ -426,7 +443,7 @@ Unsubscribe: call +44-XXX-XXX-XXXX
 
 在 App 设置中提供 SMS 偏好管理页面。
 
-### 7.3 最佳实践
+### 8.3 最佳实践
 
 1. 每条营销消息**必须**包含退出指引
 2. 使用品牌自有域名短链接（避免 bit.ly 等被运营商过滤）
@@ -437,9 +454,9 @@ Unsubscribe: call +44-XXX-XXX-XXXX
 
 ---
 
-## 八、消息模板范例（英语）
+## 九、消息模板范例（英语）
 
-### 8.1 字符编码说明
+### 9.1 字符编码说明
 
 | 编码 | 单条上限 | 拼接每段 | 何时触发 |
 |------|---------|---------|---------|
@@ -461,7 +478,7 @@ Unsubscribe: call +44-XXX-XXX-XXXX
 
 > **建议：** 英语消息天然适合 GSM-7 编码，只要避免使用 emoji 和非拉丁字符，即可充分利用 160 字符的单条容量。
 
-### 8.2 OTP 验证码模板
+### 9.2 OTP 验证码模板
 
 **GSM-7 兼容（推荐，160字符/条）：**
 ```
@@ -470,7 +487,7 @@ Do not share this code with anyone.
 ```
 (85字符，1条消息)
 
-### 8.3 交易通知模板
+### 9.3 交易通知模板
 
 **订单确认（GSM-7）：**
 ```
@@ -514,7 +531,7 @@ If this wasn't you: https://brand.com/security
 ```
 (96字符，1条)
 
-### 8.4 营销消息模板（需 opt-in 同意）
+### 9.4 营销消息模板（需 opt-in 同意）
 
 **促销活动（GSM-7）：**
 ```
@@ -542,7 +559,7 @@ Opt out: https://brand.com/unsub/{TOKEN}
 
 > **注意：** 英国在 AWS 上不支持双向 SMS，营销消息的退出方式必须使用链接而非 STOP 关键词。
 
-### 8.5 Opt-in 确认模板
+### 9.5 Opt-in 确认模板
 
 **首次订阅确认（GSM-7）：**
 ```
@@ -551,7 +568,7 @@ Msg frequency varies. Opt out: https://brand.com/unsub/{TOKEN}
 ```
 (118字符，1条)
 
-### 8.6 注意事项汇总
+### 9.6 注意事项汇总
 
 | 要点 | 说明 |
 |------|------|
@@ -565,9 +582,9 @@ Msg frequency varies. Opt out: https://brand.com/unsub/{TOKEN}
 
 ---
 
-## 九、定价信息
+## 十、定价信息
 
-### 9.1 AWS 定价
+### 10.1 AWS 定价
 
 | 费用项 | 参考价格 |
 |--------|---------|
@@ -582,7 +599,7 @@ Msg frequency varies. Opt out: https://brand.com/unsub/{TOKEN}
 2. 联系 AWS 销售获取报价
 3. 登录 AWS 控制台查看
 
-### 9.2 成本优化建议
+### 10.2 成本优化建议
 
 1. **使用 Sender ID（免费）** — 对于不需要双向通信的场景，Sender ID 比短码便宜得多
 2. **使用 GSM-7 编码** — 英语天然兼容，每条160字符
@@ -592,7 +609,7 @@ Msg frequency varies. Opt out: https://brand.com/unsub/{TOKEN}
 
 ---
 
-## 十、合规清单
+## 十一、合规清单
 
 在英国发送 SMS 前，确保完成：
 
@@ -616,7 +633,7 @@ Msg frequency varies. Opt out: https://brand.com/unsub/{TOKEN}
 
 ---
 
-## 十一、风险评估
+## 十二、风险评估
 
 | 风险 | 严重程度 | 缓解措施 |
 |------|---------|---------|

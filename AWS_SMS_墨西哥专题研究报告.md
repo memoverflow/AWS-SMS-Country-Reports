@@ -29,13 +29,34 @@
 
 ---
 
-## 二、Sender ID 注册详细流程
+## 二、费用总览
 
-### 2.1 注册方式
+### 2.1 号码费用
+
+| 费用项目 | 一次性费用 | 月度费用 | 备注 |
+|---------|-----------|---------|------|
+| Sender ID | $0 | $0 | 需注册，最低月发 1,000 条 |
+| 短码 (Short Code) | 需通过 Support Case 获取报价 | 需通过 Support Case 获取报价 | 预置约 14 周 |
+
+### 2.2 每条消息费用
+
+| 号码类型 | 基础价格/条 | 备注 |
+|---------|-----------|------|
+| Sender ID / 短码 | $0.10 | 每条消息段（message segment）计费 |
+
+### 2.3 月度消费阈值
+
+新账户默认 $1.00 USD/月，需申请提高。
+
+---
+
+## 三、Sender ID 注册详细流程
+
+### 3.1 注册方式
 
 墨西哥 Sender ID 需通过 AWS 控制台或 Support Case 提交注册。
 
-### 2.2 注册要求与限制
+### 3.2 注册要求与限制
 
 | 要求 | 说明 |
 |------|------|
@@ -46,7 +67,7 @@
 
 > **重要：** 如果无法满足每月1,000条的最低发送量要求，建议改用短码。Sender ID 不覆盖小型 MVNO 运营商。
 
-### 2.3 注册所需材料
+### 3.3 注册所需材料
 
 | 材料 | 说明 |
 |------|------|
@@ -60,7 +81,7 @@
 | 使用场景描述 | OTP / 事务性 / 营销等 |
 | 预估月发送量 | 月度消息数量（须 ≥ 1,000 条） |
 
-### 2.4 Support Case 填写指南
+### 3.4 Support Case 填写指南
 
 **访问地址：**
 ```
@@ -84,7 +105,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 - Transactional
 - Transactional/Notifications/OTP/2FA
 
-### 2.5 Case Description 模板（Sender ID）
+### 3.5 Case Description 模板（Sender ID）
 
 ```
 Subject: Request for Sender ID Registration - Mexico (MX)
@@ -131,7 +152,7 @@ We also request an increase to our monthly SMS spend limit from $1.00 to
 $[desired amount] USD.
 ```
 
-### 2.6 注册时间线（Sender ID）
+### 3.6 注册时间线（Sender ID）
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -143,13 +164,13 @@ $[desired amount] USD.
 
 ---
 
-## 三、短码申请详细流程
+## 四、短码申请详细流程
 
-### 3.1 申请方式
+### 4.1 申请方式
 
 墨西哥**不在** AWS 控制台直接支持短码申请的国家列表中，需通过 **AWS Support Case** 手动申请。
 
-### 3.2 Support Case 填写指南
+### 4.2 Support Case 填写指南
 
 **访问地址：**
 ```
@@ -167,7 +188,7 @@ https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit
 | Limit Type | 选择消息类型 |
 | Limit Increase Value | **1**（即申请 1 个专用短码） |
 
-### 3.3 Case Description 模板（短码）
+### 4.3 Case Description 模板（短码）
 
 ```
 Subject: Request for Dedicated Short Code - Mexico (MX)
@@ -217,7 +238,7 @@ $[desired amount] USD.
 Please provide the registration form and estimated timeline.
 ```
 
-### 3.4 申请时间线（短码）
+### 4.4 申请时间线（短码）
 
 | 阶段 | 预计时间 |
 |------|---------|
@@ -228,7 +249,7 @@ Please provide the registration form and estimated timeline.
 | 短码配置完成 | 1-2周 |
 | **总计** | **约14周** |
 
-### 3.5 费用说明
+### 4.5 费用说明
 
 | 费用项 | 说明 |
 |--------|------|
@@ -241,9 +262,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 四、长码限制详解
+## 五、长码限制详解
 
-### 4.1 长码使用限制
+### 5.1 长码使用限制
 
 墨西哥的长码有严格的使用限制：
 
@@ -254,7 +275,7 @@ Please provide the registration form and estimated timeline.
 | **频率限制** | 同一长码 2分钟内超9条消息触发号码轮换 |
 | 号码轮换 | 超限后 AWS 自动切换到另一个号码发送 |
 
-### 4.2 号码轮换的影响
+### 5.2 号码轮换的影响
 
 | 影响 | 说明 |
 |------|------|
@@ -267,9 +288,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 五、墨西哥电信监管
+## 六、墨西哥电信监管
 
-### 5.1 监管机构
+### 6.1 监管机构
 
 **注意：** 原监管机构 **IFT**（Instituto Federal de Telecomunicaciones，联邦电信研究所）于2025年10月17日被撤销，其职能由新成立的 **CRT**（Comision Reguladora de Telecomunicaciones，电信监管委员会）接管。
 
@@ -279,7 +300,7 @@ Please provide the registration form and estimated timeline.
 | 前监管机构 | IFT（2013-2025） |
 | 消费者保护 | **PROFECO**（联邦消费者保护署） |
 
-### 5.2 A2P SMS 监管现状
+### 6.2 A2P SMS 监管现状
 
 墨西哥的 A2P SMS 监管主要通过以下框架：
 - 联邦电信和广播法（Ley Federal de Telecomunicaciones y Radiodifusion）
@@ -287,7 +308,7 @@ Please provide the registration form and estimated timeline.
 - 联邦消费者保护法
 - 运营商自律机制（Telcel、Movistar、AT&T 各有内部过滤规则）
 
-### 5.3 禁止/限制内容
+### 6.3 禁止/限制内容
 
 | 类别 | 限制程度 | 说明 |
 |------|---------|------|
@@ -301,7 +322,7 @@ Please provide the registration form and estimated timeline.
 
 > **特别警告：** 墨西哥运营商对**政治推广消息**采取零容忍态度，会直接封锁发送号码。含 URL 和品牌名的营销消息也面临较高的屏蔽风险。
 
-### 5.4 发送时间建议
+### 6.4 发送时间建议
 
 虽无明确法定限制，行业最佳实践：
 - **推荐发送时段：** 09:00-21:00 CST（UTC-6）
@@ -311,13 +332,13 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 六、墨西哥数据保护法 (LFPDPPP)
+## 七、墨西哥数据保护法 (LFPDPPP)
 
-### 6.1 法律概述
+### 7.1 法律概述
 
 **LFPDPPP**（Ley Federal de Proteccion de Datos Personales en Posesion de los Particulares，联邦个人数据保护法）于2010年颁布，是墨西哥规范私营部门处理个人数据的核心法律。由 **INAI**（国家透明、信息获取和个人数据保护研究所）负责执行。
 
-### 6.2 对 SMS 业务的关键要求
+### 7.2 对 SMS 业务的关键要求
 
 | 要求 | 详情 |
 |------|------|
@@ -328,7 +349,7 @@ Please provide the registration form and estimated timeline.
 | **数据最小化** | 仅收集必要的个人数据 |
 | **REVICA 注册表** | 消费者可登记号码拒绝商业营销 |
 
-### 6.3 ARCO 权利详解
+### 7.3 ARCO 权利详解
 
 | 权利 | 说明 | 响应期限 |
 |------|------|---------|
@@ -337,7 +358,7 @@ Please provide the registration form and estimated timeline.
 | **Cancelacion（取消/删除）** | 删除其个人数据 | 收到请求后20天内 |
 | **Oposicion（反对）** | 反对出于特定目的的数据处理 | 收到请求后20天内 |
 
-### 6.4 违规处罚
+### 7.4 违规处罚
 
 | 处罚类型 | 详情 |
 |---------|------|
@@ -348,7 +369,7 @@ Please provide the registration form and estimated timeline.
 
 > UMA（Unidad de Medida y Actualizacion）是墨西哥的计量和更新单位，2026年每日约 $113.14 MXN（约 $6.50 USD）。
 
-### 6.5 REVICA（拒绝商业营销注册表）
+### 7.5 REVICA（拒绝商业营销注册表）
 
 - 类似于 Do Not Call Register
 - 消费者可注册号码拒绝商业营销电话和短信
@@ -357,9 +378,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 七、运营商与号码格式
+## 八、运营商与号码格式
 
-### 7.1 三大运营商
+### 8.1 三大运营商
 
 | 运营商 | 母公司 | 市场份额（约） | 备注 |
 |--------|--------|-------------|------|
@@ -370,7 +391,7 @@ Please provide the registration form and estimated timeline.
 
 > **Sender ID 仅支持 Telcel、Movistar、AT&T 三家网络。** 发送到其他 MVNO 用户的消息可能无法投递或显示随机号码。
 
-### 7.2 号码格式
+### 8.2 号码格式
 
 #### 基本结构
 - 国家代码：+52
@@ -405,7 +426,7 @@ Please provide the registration form and estimated timeline.
 
 > **注意：** 2019年墨西哥号码格式改革后，移动号码不再需要 "1" 前缀。但部分旧系统可能仍使用 +521XXXXXXXXXX 格式。建议同时支持 10位和 11位号码（含旧 "1" 前缀）的验证。
 
-### 7.3 运营商技术细节
+### 8.3 运营商技术细节
 
 - Sender ID 仅支持三大运营商（Telcel、Movistar、AT&T）
 - **同一长码2分钟内超9条触发号码轮换**
@@ -418,9 +439,9 @@ Please provide the registration form and estimated timeline.
 
 ---
 
-## 八、消息模板范例（西班牙语）
+## 九、消息模板范例（西班牙语）
 
-### 8.1 字符编码说明
+### 9.1 字符编码说明
 
 | 编码 | 单条上限 | 拼接每段 | 何时触发 |
 |------|---------|---------|---------|
@@ -441,7 +462,7 @@ Please provide the registration form and estimated timeline.
 
 > **建议：** 墨西哥用户普遍习惯在短信中不使用重音符号。使用 GSM-7 兼容写法可将每条消息从70字符提升到160字符，显著降低成本。
 
-### 8.2 OTP 验证码模板
+### 9.2 OTP 验证码模板
 
 **GSM-7 兼容版（推荐，160字符/条）：**
 ```
@@ -457,7 +478,7 @@ No comparta este código.
 ```
 (79字符，2条消息 = 双倍费用)
 
-### 8.3 交易通知模板
+### 9.3 交易通知模板
 
 **订单确认（GSM-7）：**
 ```
@@ -501,7 +522,7 @@ Si no fue usted: https://brand.com/security
 ```
 (93字符，1条)
 
-### 8.4 营销消息模板（需 opt-in 同意，高屏蔽风险）
+### 9.4 营销消息模板（需 opt-in 同意，高屏蔽风险）
 
 > **警告：** 墨西哥运营商可能屏蔽含 URL 和品牌名的营销消息。建议：（1）使用短码而非 Sender ID 发送营销消息；（2）避免在消息中同时包含品牌名和 URL；（3）测试不同运营商的投递率。
 
@@ -529,7 +550,7 @@ Cancelar: Responda STOP
 ```
 (110字符，1条)
 
-### 8.5 Opt-in 确认模板
+### 9.5 Opt-in 确认模板
 
 **首次订阅确认（GSM-7）：**
 ```
@@ -538,7 +559,7 @@ Frecuencia variable. Cancelar: Responda STOP
 ```
 (104字符，1条)
 
-### 8.6 注意事项汇总
+### 9.6 注意事项汇总
 
 | 要点 | 说明 |
 |------|------|
@@ -553,9 +574,9 @@ Frecuencia variable. Cancelar: Responda STOP
 
 ---
 
-## 九、定价信息
+## 十、定价信息
 
-### 9.1 AWS 定价
+### 10.1 AWS 定价
 
 | 费用项 | 金额 |
 |--------|------|
@@ -570,7 +591,7 @@ Frecuencia variable. Cancelar: Responda STOP
 2. 联系 AWS 销售获取报价
 3. 登录 AWS 控制台查看
 
-### 9.2 成本优化建议
+### 10.2 成本优化建议
 
 1. **使用 GSM-7 编码** — 去掉 `á í ó ú` 重音，每条160字符 vs Unicode 的70字符
 2. **精简消息内容** — 保持单条消息在160字符内避免拼接
@@ -582,7 +603,7 @@ Frecuencia variable. Cancelar: Responda STOP
 
 ---
 
-## 十、合规清单
+## 十一、合规清单
 
 在墨西哥发送 SMS 前，确保完成：
 
@@ -608,7 +629,7 @@ Frecuencia variable. Cancelar: Responda STOP
 
 ---
 
-## 十一、风险评估
+## 十二、风险评估
 
 | 风险 | 严重程度 | 缓解措施 |
 |------|---------|---------|
